@@ -11,7 +11,7 @@ void drop_c(char *str, char c)
  
 		if(k != i)
 			str[k] = str[i];
- 
+
 		k++;
 	}
 	str[k] = '\0';
@@ -19,7 +19,7 @@ void drop_c(char *str, char c)
  
 int main(int argc, char **argv)
 {
-	char *s = "test string a a a";
+	char s[] = "test string a a a";
 	drop_c(s, ' ');
  
 	printf("%s\n", s);

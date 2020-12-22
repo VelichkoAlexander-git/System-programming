@@ -18,7 +18,7 @@ int main(void)
 	while(f)
 	{
 		f = 0;
-		for(int i = 0; i <= SIZE-1; i++)
+		for(int i = 0; i < SIZE-1; i++)
 		{
 			if(*arr_strs[i] > *arr_strs[i+1])
 			{

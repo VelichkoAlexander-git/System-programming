@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
- 
+#include <string.h>
+
 typedef struct {
 	double x;
 	double y;
@@ -36,10 +37,11 @@ double line_length(Line *l)
 int main(void)
 {
 	Line *l1 = line_init(1, 1, 5, 5);
+	printf("line length 1: %f\n", line_length(l1));
+	memset(l1, 0, sizeof(Line));
+
 	Line *l2 = line_init(-5, 3, 0, 5);
- 
-	printf("line length: %f\n", line_length(l1));
-	printf("line length: %f\n", line_length(l2));
+	printf("line length 2: %f\n", line_length(l2));
  
 	return 0;
 }
