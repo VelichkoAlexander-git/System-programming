@@ -1,3 +1,5 @@
+.PHONY: all clean test
+
 CC=gcc
 
 all : Task
@@ -10,3 +12,6 @@ TaskThread: TaskThread.c
 
 ts_random: ts_random.c
 	$(CC) -c ts_random.c
+
+test: Task
+	./Task

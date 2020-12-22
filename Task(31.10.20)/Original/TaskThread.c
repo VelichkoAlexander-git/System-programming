@@ -54,22 +54,23 @@ void *MonteKarlo(void *min_a)
 {
 	double x;
 	double y;
-	int i = 0;
 	double _Nmax = (double)(Nmax/CountThreads);
+	int i = 0;
+	int _Ncirc = 0;	
 
-	pthread_mutex_lock(&lock);
 	while (i < _Nmax)
 	{
 		x = ts_random();
 		y = ts_random();
 		if (x*x + y*y < 1)
 		{
-
-			Ncirc++;
-
+			_Ncirc++;
 		}
 		i++;
 	}
+
+	pthread_mutex_lock(&lock);
+	Ncirc += _Ncirc;
 	pthread_mutex_unlock(&lock);
 
 	pthread_exit(NULL);
